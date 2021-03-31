@@ -51,10 +51,9 @@ def distanceGPS(latA, longA, latB, longB):
 
 
 #############################################################################
-def distKm(latStart, longStart, latDrop, longDrop):
+def distmm(latStart, longStart, latDrop, longDrop):
     """
     return distance beetween the depart and the drop in km
-
     :param latStart:
     :param longStart:
     :param latDrop:
@@ -62,13 +61,10 @@ def distKm(latStart, longStart, latDrop, longDrop):
     :return: distance in km
     """
     # cooordonnées GPS en radians du 1er point (ici, mairie de Tours)
-    latA = deg2rad(latStart)  # Nord
-    longA = deg2rad(longStart)  # Est
-
+    latA = deg2rad(latStart)
+    longA = deg2rad(longStart)
     # cooordonnées GPS en radians du 2ème point (ici, mairie de Limoges)
-    latB = deg2rad(latDrop)  # Nord
-    longB = deg2rad(longDrop)  # Est
-
-    dist_km = (distanceGPS(latA, longA, latB, longB)) / 1000
-
-    return int(dist_km)
+    latB = deg2rad(latDrop)
+    longB = deg2rad(longDrop)
+    dist_m = distanceGPS(latA, longA, latB, longB)
+    return dist_m
