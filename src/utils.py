@@ -81,7 +81,6 @@ def ft_haversine_distance(lat1, lng1, lat2, lng2):
     d = np.sin(lat * 0.5) ** 2 + np.cos(lat1) * np.cos(lat2) * np.sin(lng * 0.5) ** 2
     h = 2 * AVG_EARTH_RADIUS * np.arcsin(np.sqrt(d))
     return h
-
 ##################################################################################
 def ft_degree(lat1, lng1, lat2, lng2):
     AVG_EARTH_RADIUS = 6371 #km
