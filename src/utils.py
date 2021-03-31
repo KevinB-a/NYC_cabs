@@ -74,6 +74,7 @@ def distKm(latStart, longStart, latDrop, longDrop):
     return int(dist_km)
 ################################################################################
 def ft_haversine_distance(lat1, lng1, lat2, lng2):
+    """function to convert lat and lng coordinates to distance in km"""
     lat1, lng1, lat2, lng2 = map(np.radians, (lat1, lng1, lat2, lng2))
     AVG_EARTH_RADIUS = 6371 #km
     lat = lat2 - lat1
