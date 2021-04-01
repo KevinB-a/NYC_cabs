@@ -73,7 +73,8 @@ def distKm(latStart, longStart, latDrop, longDrop):
 
     return int(dist_km)
 ################################################################################
-def ft_haversine_distance(lat1, lng1, lat2, lng2):
+def lat_and_long_to_distance(lat1, lng1, lat2, lng2):
+    """function to convert lat and lng coordinates to distance in km"""
     lat1, lng1, lat2, lng2 = map(np.radians, (lat1, lng1, lat2, lng2))
     AVG_EARTH_RADIUS = 6371 #km
     lat = lat2 - lat1
@@ -81,7 +82,6 @@ def ft_haversine_distance(lat1, lng1, lat2, lng2):
     d = np.sin(lat * 0.5) ** 2 + np.cos(lat1) * np.cos(lat2) * np.sin(lng * 0.5) ** 2
     h = 2 * AVG_EARTH_RADIUS * np.arcsin(np.sqrt(d))
     return h
-
 ##################################################################################
 def ft_degree(lat1, lng1, lat2, lng2):
     AVG_EARTH_RADIUS = 6371 #km
@@ -90,5 +90,3 @@ def ft_degree(lat1, lng1, lat2, lng2):
     y = np.sin(lng_delta_rad) * np.cos(lat2)
     x = np.cos(lat1) * np.sin(lat2) - np.sin(lat1) * np.cos(lat2) * np.cos(lng_delta_rad)
     return np.degrees(np.arctan2(y, x))
-
-##################################################################################

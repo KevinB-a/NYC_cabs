@@ -8,6 +8,7 @@ pd.set_option('display.max_columns', 10)
 
 df = pd.read_csv("/home/apprenant/PycharmProjects/NYC_cabs/data/train.csv")
 
+
 print(df.head(10))
 
 print(round(df.describe()))
@@ -25,4 +26,5 @@ print(df.columns)
 df_clean = df[['id', 'vendor_id', 'pickup_datetime', 'dropoff_datetime', 'pickup_longitude', 'pickup_latitude',
                'dropoff_longitude', 'dropoff_latitude', 'trip_duration']]
 
+print(df_clean.head())
 df_clean.to_csv("/home/apprenant/PycharmProjects/NYC_cabs/data/clean.csv", index = False)
